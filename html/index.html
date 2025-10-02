@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercearia - Gestão Completa</title>
+  <link rel="stylesheet" href="../css/index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Mercearia - Porpa</h1>
+    </header>
+
+    <section class="produtos-section">
+      <h2>Adicionar Novo Produto</h2>
+      <form id="form-produto" class="form-produto">
+        <input type="text" id="nome" placeholder="Nome do Produto" required>
+        <input type="number" id="preco" placeholder="Preço (R$)" required>
+        <input type="text" id="descricao" placeholder="Descrição" required>
+        <input type="number" id="quantidade" placeholder="Quantidade em Estoque" required>
+        <input type="text" id="categoria" placeholder="Categoria" required>
+        <button type="submit">Adicionar Produto</button>
+      </form>
+
+      <div class="tabela-container">
+        <h2>Produtos Cadastrados</h2>
+        <table id="tabela-produtos">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Descrição</th>
+              <th>Preço</th>
+              <th>Qtd Estoque</th>
+              <th>Categoria</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="fornecedores-section">
+      <h2>Adicionar Novo Fornecedor</h2>
+      <form id="form-fornecedor" class="form-fornecedor">
+        <input type="text" id="fornecedor-nome" placeholder="Nome do Fornecedor" required>
+        <input type="text" id="fornecedor-cnpj" placeholder="CNPJ" required>
+        <input type="text" id="fornecedor-numero" placeholder="Telefone / Número" required>
+        <button type="submit">Adicionar Fornecedor</button>
+      </form>
+
+      <div class="tabela-container">
+        <h2>Fornecedores Cadastrados</h2>
+        <table id="tabela-fornecedores">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>CNPJ</th>
+              <th>Telefone</th>
+              <th>Ações</th>
+            </tr> 
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="entrada-section">
+      <h2>Registrar Entrada de Produto</h2>
+      <form id="form-entrada" class="form-entrada">
+        <select id="entrada-fornecedor" required>
+          <option value="">Selecione o Fornecedor</option>
+        </select>
+
+        <select id="entrada-produto" required>
+          <option value="">Selecione o Produto</option>
+        </select>
+
+        <input type="number" id="entrada-quantidade" placeholder="Quantidade" required>
+        <input type="date" id="entrada-data" required>
+        <button type="submit">Registrar Entrada</button>
+      </form>
+
+      <div class="tabela-container">
+        <h2>Movimentações de Produtos</h2>
+        <table id="tabela-entradas">
+          <thead>
+            <tr>
+              <th>Fornecedor</th>
+              <th>Produto</th>
+              <th>Quantidade</th>
+              <th>Data Entrada</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <script src="../js/index.js"></script>
+</body>
+</html>

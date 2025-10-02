@@ -1,0 +1,402 @@
+/* ===== Reset básico ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #2c3e50;
+  line-height: 1.6;
+  background-image: url('https://img.elo7.com.br/product/zoom/1C340F5/quadro-tela-paisagens-natureza-praia-coqueiro-mar-areia-004-quadro-tela.jpg');
+  background-size: cover;       /* Faz a imagem cobrir toda a tela */
+  background-position: center;  /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Evita repetição da imagem */
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+  transition: box-shadow 0.3s;
+  background-color: rgba(255, 255, 255, 0.85); /* Leve transparência para destacar o conteúdo */
+}
+
+.container:hover {
+  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+header h1 {
+  text-align: center;
+  font-size: 2.8rem;
+  color: #1a2533;
+  margin-bottom: 20px;
+}
+
+/* ===== Seção Produtos ===== */
+.produtos-section {
+  margin-top: 40px;
+}
+
+.produtos-section h2 {
+  font-size: 2rem;
+  color: #1a2533;
+  margin-bottom: 25px;
+  border-bottom: 3px solid #3498db;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* ===== Formulário de Produtos ===== */
+.form-produto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+  margin-bottom: 35px;
+}
+
+.form-produto input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.form-produto input:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+  outline: none;
+}
+
+.form-produto button {
+  grid-column: span 2;
+  padding: 14px;
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.form-produto button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(52, 152, 219, 0.4);
+}
+
+/* ===== Tabela de Produtos ===== */
+.tabela-container {
+  margin-top: 40px;
+  overflow-x: auto;
+}
+
+#tabela-produtos {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  font-size: 1rem;
+}
+
+#tabela-produtos th, #tabela-produtos td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+#tabela-produtos th {
+  background-color: #ecf0f1;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+#tabela-produtos tr:hover {
+  background-color: #f1f8ff;
+  transition: background-color 0.3s;
+}
+
+#tabela-produtos button {
+  padding: 8px 14px;
+  margin: 0 4px;
+  border-radius: 6px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+#tabela-produtos .btn-editar {
+  background: linear-gradient(45deg, #27ae60, #2ecc71);
+}
+
+#tabela-produtos .btn-editar:hover {
+  transform: scale(1.05);
+}
+
+#tabela-produtos .btn-deletar {
+  background: linear-gradient(45deg, #e74c3c, #c0392b);
+}
+
+#tabela-produtos .btn-deletar:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 768px) {
+  .form-produto {
+    grid-template-columns: 1fr;
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  .produtos-section h2 {
+    font-size: 1.6rem;
+  }
+
+  #tabela-produtos th, #tabela-produtos td {
+    font-size: 0.95rem;
+  }
+}
+/* ===== Seção Fornecedores ===== */
+.fornecedores-section {
+  margin-top: 60px;
+}
+
+.fornecedores-section h2 {
+  font-size: 2rem;
+  color: #1a2533;
+  margin-bottom: 25px;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* ===== Formulário de Fornecedores ===== */
+.form-fornecedor {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 18px;
+  margin-bottom: 35px;
+}
+
+.form-fornecedor input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.form-fornecedor input:focus {
+  box-shadow: 0 0 8px rgba(46, 204, 113, 0.3);
+  outline: none;
+}
+
+.form-fornecedor button {
+  grid-column: span 2;
+  padding: 14px;
+  background: linear-gradient(45deg, #2ecc71, #27ae60);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.form-fornecedor button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(46, 204, 113, 0.4);
+}
+
+/* ===== Tabela de Fornecedores ===== */
+#tabela-fornecedores {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  font-size: 1rem;
+}
+
+#tabela-fornecedores th, #tabela-fornecedores td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+#tabela-fornecedores th {
+  background-color: #ecf0f1;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+#tabela-fornecedores tr:hover {
+  background-color: #f0fff4;
+  transition: background-color 0.3s;
+}
+
+#tabela-fornecedores button {
+  padding: 8px 14px;
+  margin: 0 4px;
+  border-radius: 6px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+#tabela-fornecedores .btn-editar {
+  background: linear-gradient(45deg, #2980b9, #3498db);
+}
+
+#tabela-fornecedores .btn-editar:hover {
+  transform: scale(1.05);
+}
+
+#tabela-fornecedores .btn-deletar {
+  background: linear-gradient(45deg, #252525, #dcdbda);
+}
+
+#tabela-fornecedores .btn-deletar:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Seção Entradas/Movimentações ===== */
+.entrada-section {
+  margin-top: 60px;
+}
+
+.entrada-section h2 {
+  font-size: 2rem;
+  color: #1a2533;
+  margin-bottom: 25px;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* ===== Formulário de Entradas ===== */
+.form-entrada {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+  margin-bottom: 35px;
+}
+
+.form-entrada input,
+.form-entrada select {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.form-entrada input:focus,
+.form-entrada select:focus {
+  border-color: #f39c12;
+  outline: none;
+}
+
+.form-entrada button {
+  grid-column: span 2;
+  padding: 14px;
+  background: linear-gradient(45deg, #f39c12, #e67e22);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: 500;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.form-entrada button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(243, 156, 18, 0.4);
+}
+
+/* ===== Tabela de Entradas/Movimentações ===== */
+#tabela-entradas {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  font-size: 1rem;
+}
+
+#tabela-entradas th, #tabela-entradas td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+#tabela-entradas th {
+  background-color: #ecf0f1;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+#tabela-entradas tr:hover {
+  background-color: #fff8f0;
+  transition: background-color 0.3s;
+}
+
+/* ===== Botões de ação nas tabelas ===== */
+#tabela-entradas button {
+  padding: 8px 14px;
+  margin: 0 4px;
+  border-radius: 6px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+#tabela-entradas .btn-editar {
+  background: linear-gradient(45deg, #8e44ad, #9b59b6);
+}
+
+#tabela-entradas .btn-editar:hover {
+  transform: scale(1.05);
+}
+
+#tabela-entradas .btn-deletar {
+  background: linear-gradient(45deg, #1e1d1d, #e74c3c);
+}
+
+#tabela-entradas .btn-deletar:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Responsividade geral ===== */
+@media (max-width: 768px) {
+  .form-fornecedor,
+  .form-entrada {
+    grid-template-columns: 1fr;
+  }
+
+  .fornecedores-section h2,
+  .entrada-section h2 {
+    font-size: 1.6rem;
+  }
+
+  #tabela-fornecedores th,
+  #tabela-fornecedores td,
+  #tabela-entradas th,
+  #tabela-entradas td {
+    font-size: 0.95rem;
+  }
+}
